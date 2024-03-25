@@ -141,24 +141,41 @@ module fixed_point_pipelined(
     parameter step = 16'b0000_0000_0001_0000; //1/16 = .0625
     
     //Internal memory
-    reg[23:0] temp_result; // Holds the result
+    //reg[23:0] temp_result; // Holds the result
     reg[23:0] current_pos; // In regards to the bounds where we are 
     //Wires
     wire clke = (clk & enable); // Are writing?
     wire calc_done = (b == current_pos) ? 1:0; // Checks to see if we are the end of the bounds
+    assign result = !calc_done ? 16'hZZZZ: (temp_x0+temp_x1 +temp_x2);
     //Fixes point values
     reg[16:0] x2,x1,x0;
+    reg[16:0] upperbound, lowerbound;
     
     
     //Pipeline Registers
-    reg[23:0] x2_p1,x2_p2,x1_p1,x1_p1,temp_x2,temp_x1;
+    reg[23:0] x2_p1,x2_p2,x1_p1,x1_p2,temp_x2,temp_x1,temp_x0;
     always @(posedge clke) begin
+    //Find the values of f(x) for each part
         x2_p1 <= (current_pos *current_pos) * x2;
-    
-    
+        x1_p1 <= (current_pos) *x1;
+    // Find the area for dX
+        x2_p2 <= x2_p1 * step;
+        x1_p2 <= x1_p1 * step;
+    // Increment the postion by x
+        current_pos <= step + current_pos;
+        temp_x2 <= temp_x2 + x2_p2;
+        temp_x1 <= temp_x1 + x1_p2;
+        
     end
     
     initial begin
-        x2 = x<<
+        x2 = x<< 8;
+        x1 = y<< 8;
+        x0 = z<< 8;
+        upperbound = b << 8;
+        lowerbound = a << 8;
+        current_pos = 0;
+        temp_x0 = x0* (upperbound - lowerbound);
+        
     end
 endmodule 

@@ -30,7 +30,7 @@ module integrator_tb;
     parameter period = 10;
 
     
-    fixed_point u0 (
+    fixed_point_pipelined u0 (
         .clk(clk),
         .enable(enable),
         .x(x),.y(y),.z(z), .b(b), .a(a),   
@@ -41,7 +41,7 @@ module integrator_tb;
         
     initial
         begin 
-        clk = 0; enable = 1; x= 1; y=1; z = 1; a=0; b =7;
+        clk = 0; enable = 1; x= 0; y=0; z = 1; a=0; b =1;
         #400  $finish;
         end
    
