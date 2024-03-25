@@ -126,3 +126,39 @@ module fixed_point(
     end
 endmodule 
 
+
+
+module fixed_point_pipelined(
+    input clk, enable,
+    input [7:0] x, //x^2 coefficent
+    input [7:0] y, //y  x coefficent
+    input [7:0] z, //constant
+    input [4:0] b, // Upper bound
+    input [4:0] a, // Lower bound,
+    output [15:0] result
+    );
+    //Step value
+    parameter step = 16'b0000_0000_0001_0000; //1/16 = .0625
+    
+    //Internal memory
+    reg[23:0] temp_result; // Holds the result
+    reg[23:0] current_pos; // In regards to the bounds where we are 
+    //Wires
+    wire clke = (clk & enable); // Are writing?
+    wire calc_done = (b == current_pos) ? 1:0; // Checks to see if we are the end of the bounds
+    //Fixes point values
+    reg[16:0] x2,x1,x0;
+    
+    
+    //Pipeline Registers
+    reg[23:0] x2_p1,x2_p2,x1_p1,x1_p1,temp_x2,temp_x1;
+    always @(posedge clke) begin
+        x2_p1 <= (current_pos *current_pos) * x2;
+    
+    
+    end
+    
+    initial begin
+        x2 = x<<
+    end
+endmodule 
