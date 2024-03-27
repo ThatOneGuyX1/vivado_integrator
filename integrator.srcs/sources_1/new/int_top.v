@@ -29,12 +29,12 @@ module int_top(
     output dp,
     output [15:0] led
     );
-    wire x, y, z, a, b, results,enable;
-    wire an,JA;
+    wire x, y, z, a, b, results,enable;     // Required wires
+    wire an,JA;                             // Useless pins for this lab
     
-    state_machine sm(.reset(btnD),.clk(clk),.ns(btnC),.sw(sw),.x(x),.y(y),.z(z),.b(b),.a(a));
+    state_machine sm(.reset(btnD),.clk(clk),.ns(btnC),.sw(sw),.x(x),.y(y),.z(z),.b(b),.a(a),.enable(enable));
     sseg_x4_top sseg1(.sw(results),.btnC(btnD),.clk(clk),.seg(seg),.an(an),.dp(dp),.JA(JA));
-    integrator(.clk(clk),.enable(enable),.x(x),.y(y),.z(z),.b(b),.a(a),.result(results));
+    integrator int1(.clk(clk),.enable(enable),.x(x),.y(y),.z(z),.b(b),.a(a),.result(results));
     
     
     
