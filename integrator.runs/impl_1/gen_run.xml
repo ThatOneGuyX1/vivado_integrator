@@ -1,65 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1710966805">
-  <File Type="BITSTR-BMM" Name="integrator_bd.bmm"/>
-  <File Type="ROUTE-PWR" Name="integrator_power_routed.rpt"/>
-  <File Type="PA-TCL" Name="integrator.tcl"/>
-  <File Type="OPT-DCP" Name="integrator_opt.dcp"/>
-  <File Type="ROUTE-PWR-SUM" Name="integrator_power_summary_routed.pb"/>
-  <File Type="REPORTS-TCL" Name="integrator_reports.tcl"/>
-  <File Type="OPT-DRC" Name="integrator_drc_opted.rpt"/>
-  <File Type="OPT-HWDEF" Name="integrator.hwdef"/>
-  <File Type="PWROPT-DCP" Name="integrator_pwropt.dcp"/>
-  <File Type="PLACE-DCP" Name="integrator_placed.dcp"/>
-  <File Type="PLACE-IO" Name="integrator_io_placed.rpt"/>
-  <File Type="PLACE-UTIL" Name="integrator_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="integrator_utilization_placed.pb"/>
-  <File Type="PLACE-CTRL" Name="integrator_control_sets_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="integrator_incremental_reuse_pre_placed.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="integrator_postplace_pwropt.dcp"/>
-  <File Type="BG-BIN" Name="integrator.bin"/>
-  <File Type="PHYSOPT-DCP" Name="integrator_physopt.dcp"/>
-  <File Type="BITSTR-MSK" Name="integrator.msk"/>
-  <File Type="ROUTE-ERROR-DCP" Name="integrator_routed_error.dcp"/>
-  <File Type="ROUTE-DCP" Name="integrator_routed.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="integrator_routed_bb.dcp"/>
-  <File Type="ROUTE-DRC" Name="integrator_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="integrator_drc_routed.pb"/>
-  <File Type="BITSTR-LTX" Name="integrator.ltx"/>
-  <File Type="ROUTE-DRC-RPX" Name="integrator_drc_routed.rpx"/>
-  <File Type="BITSTR-MMI" Name="integrator.mmi"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="integrator_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="integrator_methodology_drc_routed.rpx"/>
-  <File Type="BITSTR-SYSDEF" Name="integrator.sysdef"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="integrator_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-PWR-RPX" Name="integrator_power_routed.rpx"/>
-  <File Type="ROUTE-STATUS" Name="integrator_route_status.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="integrator_route_status.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="integrator_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-TIMING-PB" Name="integrator_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMING-RPX" Name="integrator_timing_summary_routed.rpx"/>
-  <File Type="RDI-RDI" Name="integrator.vdi"/>
-  <File Type="ROUTE-CLK" Name="integrator_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW" Name="integrator_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="integrator_bus_skew_routed.pb"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="integrator_bus_skew_routed.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="integrator_postroute_physopt.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="integrator_postroute_physopt_bb.dcp"/>
-  <File Type="BG-BIT" Name="integrator.bit"/>
-  <File Type="BITSTR-RBT" Name="integrator.rbt"/>
-  <File Type="BITSTR-NKY" Name="integrator.nky"/>
-  <File Type="PDI-FILE" Name="integrator.pdi"/>
-  <File Type="RCFI_FILE" Name="integrator.rcfi"/>
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1711573167">
+  <File Type="BITSTR-BMM" Name="sseg_x4_top_bd.bmm"/>
+  <File Type="ROUTE-PWR" Name="sseg_x4_top_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="sseg_x4_top.tcl"/>
+  <File Type="OPT-DCP" Name="sseg_x4_top_opt.dcp"/>
+  <File Type="ROUTE-PWR-SUM" Name="sseg_x4_top_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="sseg_x4_top_reports.tcl"/>
+  <File Type="OPT-DRC" Name="sseg_x4_top_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="sseg_x4_top.hwdef"/>
+  <File Type="PWROPT-DCP" Name="sseg_x4_top_pwropt.dcp"/>
+  <File Type="PLACE-DCP" Name="sseg_x4_top_placed.dcp"/>
+  <File Type="PLACE-IO" Name="sseg_x4_top_io_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="sseg_x4_top_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="sseg_x4_top_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="sseg_x4_top_control_sets_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="sseg_x4_top_incremental_reuse_pre_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="sseg_x4_top_postplace_pwropt.dcp"/>
+  <File Type="BG-BIN" Name="sseg_x4_top.bin"/>
+  <File Type="PHYSOPT-DCP" Name="sseg_x4_top_physopt.dcp"/>
+  <File Type="BITSTR-MSK" Name="sseg_x4_top.msk"/>
+  <File Type="ROUTE-ERROR-DCP" Name="sseg_x4_top_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="sseg_x4_top_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="sseg_x4_top_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="sseg_x4_top_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="sseg_x4_top_drc_routed.pb"/>
+  <File Type="BITSTR-LTX" Name="sseg_x4_top.ltx"/>
+  <File Type="ROUTE-DRC-RPX" Name="sseg_x4_top_drc_routed.rpx"/>
+  <File Type="BITSTR-MMI" Name="sseg_x4_top.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="sseg_x4_top_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="sseg_x4_top_methodology_drc_routed.rpx"/>
+  <File Type="BITSTR-SYSDEF" Name="sseg_x4_top.sysdef"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="sseg_x4_top_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="sseg_x4_top_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="sseg_x4_top_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="sseg_x4_top_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="sseg_x4_top_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="sseg_x4_top_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="sseg_x4_top_timing_summary_routed.rpx"/>
+  <File Type="RDI-RDI" Name="sseg_x4_top.vdi"/>
+  <File Type="ROUTE-CLK" Name="sseg_x4_top_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="sseg_x4_top_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="sseg_x4_top_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="sseg_x4_top_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="sseg_x4_top_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="sseg_x4_top_postroute_physopt_bb.dcp"/>
+  <File Type="BG-BIT" Name="sseg_x4_top.bit"/>
+  <File Type="BITSTR-RBT" Name="sseg_x4_top.rbt"/>
+  <File Type="BITSTR-NKY" Name="sseg_x4_top.nky"/>
+  <File Type="PDI-FILE" Name="sseg_x4_top.pdi"/>
+  <File Type="RCFI_FILE" Name="sseg_x4_top.rcfi"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
-  <File Type="CFI_FILE" Name="integrator.cfi"/>
-  <File Type="RNPI_FILE" Name="integrator.rnpi"/>
-  <File Type="NPI_FILE" Name="integrator.npi"/>
-  <File Type="RBD_FILE" Name="integrator.rbd"/>
-  <File Type="BG-BGN" Name="integrator.bgn"/>
-  <File Type="BG-DRC" Name="integrator.drc"/>
+  <File Type="CFI_FILE" Name="sseg_x4_top.cfi"/>
+  <File Type="RNPI_FILE" Name="sseg_x4_top.rnpi"/>
+  <File Type="NPI_FILE" Name="sseg_x4_top.npi"/>
+  <File Type="RBD_FILE" Name="sseg_x4_top.rbd"/>
+  <File Type="BG-BGN" Name="sseg_x4_top.bgn"/>
+  <File Type="BG-DRC" Name="sseg_x4_top.drc"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/clk_gen.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/digit_selector.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/segment_display.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/sseg_x4_top.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/integrator.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/debounce.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -67,7 +104,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="integrator"/>
+      <Option Name="TopModule" Val="sseg_x4_top"/>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>

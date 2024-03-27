@@ -2,11 +2,11 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Wed Mar 20 14:33:32 2024
-# Process ID: 8096
-# Current directory: C:/Users/ianse/OneDrive/Documents/SCHOOL/Winter 24/ECEN 340/integrator/integrator.runs/impl_1
-# Command line: vivado.exe -log integrator.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source integrator.tcl -notrace
-# Log file: C:/Users/ianse/OneDrive/Documents/SCHOOL/Winter 24/ECEN 340/integrator/integrator.runs/impl_1/integrator.vdi
-# Journal file: C:/Users/ianse/OneDrive/Documents/SCHOOL/Winter 24/ECEN 340/integrator/integrator.runs/impl_1\vivado.jou
+# Start of session at: Wed Mar 27 14:59:34 2024
+# Process ID: 23392
+# Current directory: C:/Users/ianse/OneDrive/Documents/SCHOOL/Winter 24/ECEN 340/integrator/vivado_integrator/integrator.runs/impl_1
+# Command line: vivado.exe -log sseg_x4_top.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source sseg_x4_top.tcl -notrace
+# Log file: C:/Users/ianse/OneDrive/Documents/SCHOOL/Winter 24/ECEN 340/integrator/vivado_integrator/integrator.runs/impl_1/sseg_x4_top.vdi
+# Journal file: C:/Users/ianse/OneDrive/Documents/SCHOOL/Winter 24/ECEN 340/integrator/vivado_integrator/integrator.runs/impl_1\vivado.jou
 #-----------------------------------------------------------
-source integrator.tcl -notrace
+source sseg_x4_top.tcl -notrace
