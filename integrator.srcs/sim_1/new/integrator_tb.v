@@ -41,8 +41,10 @@ module integrator_tb;
         
     initial
         begin 
-        clk = 0; enable = 1; x= 10; y = 3; z = 7 ; a=0; b =8;
-        #1000  $finish;
+        clk = 0; enable = 0; x= 10; y = 3; z = 7 ; a=0; b =8;
+        #20500 enable =1;
+        #10 
+        #20500 $finish;
         end
    
 endmodule
