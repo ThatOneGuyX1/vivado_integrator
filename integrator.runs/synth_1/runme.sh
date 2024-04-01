@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/ianse/OneDrive/Documents/SCHOOL/Winter 24/ECEN 340/integrator/integrator.runs/synth_1'
+HD_PWD='C:/Users/paulmcb/Desktop/Final Project/vivado_integrator/integrator.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log integrator.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source integrator.tcl
+EAStep vivado -log int_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source int_top.tcl

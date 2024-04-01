@@ -25,17 +25,24 @@ module int_top(
     input [15:0] sw,
     input btnC,
     input btnD,
-    output [7:0] seg,
+    output [6:0] seg,
     output dp,
     output [15:0] led
     );
-    wire x, y, z, a, b, results,enable;     // Required wires
+    wire [7:0] x, y, z;
+    wire [3:0] a, b;
+    wire [15:0]results;
+    wire enable, ns, rst, rst_pulse, ns_pulse, calc_done_flag;     // Required wires
     wire an,JA;                             // Useless pins for this lab
     
-    state_machine sm(.reset(btnD),.clk(clk),.ns(btnC),.sw(sw),.x(x),.y(y),.z(z),.b(b),.a(a),.enable(enable));
-    sseg_x4_top sseg1(.sw(results),.btnC(btnD),.clk(clk),.seg(seg),.an(an),.dp(dp),.JA(JA));
-    integrator int1(.clk(clk),.enable(enable),.x(x),.y(y),.z(z),.b(b),.a(a),.result(results));
-    
+    sseg_x4_top sseg1(.sw(results),.btnC(rst_pulse),.clk(clk),.seg(seg),.an(an),.dp(dp),.JA(JA));
+    integrator int1(.clk(clk),.enable(enable),.x(x),.y(y),.z(z),.b(b),.a(a),.result(results),.calc_done(calc_done_flag));
+    debounce dbC(clk, btnC, ns);
+    debounce dbD(clk,btnD,rst);
+    create_pulse_from_step ns_pulse1(.clk(clk),.step(ns),.pulse(ns_pulse));
+    create_pulse_from_step rst_pulse1(.clk(clk),.step(rst),.pulse(rst_pulse));
+    state_machine sm(.reset(rst_pulse),.clk(clk),.ns(ns_pulse),.sw(sw),.calc_done_flag(calc_done_flag),.x(x),.y(y),.z(z),.b(b),.a(a),.enable(enable),.led(led));
+
     
     
     
