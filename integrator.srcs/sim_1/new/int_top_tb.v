@@ -28,14 +28,13 @@ module int_top_tb;
     wire [6:0] seg;
     wire dp;
     wire [15:0] led;
-    wire [7:0] x,y,z;
-    wire [3:0] a,b;
+//    wire [7:0] x,y,z;
+//    wire [3:0] a,b;
     wire enable;
     parameter period = 10;
     
     int_top uut(.clk(clk),.sw(sw),.btnC(btnC),.btnD(btnD),.seg(seg),.dp(dp),.led(led));
     
-    //state_machine uut(.reset(btnD),.clk(clk),.ns(btnC),.x(x),.y(y),.z(z),.b(b),.a(a),.enable(enable),.led(led));
     
     always #(period/2) clk = ~clk;
     always #(3*period) btnC = ~btnC;
