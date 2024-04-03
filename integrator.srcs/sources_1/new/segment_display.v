@@ -23,7 +23,6 @@
 module segment_display(
     input [3:0] sw,
     output reg [6:0] seg,
-    output [3:0] an,
     output dp
     );
     

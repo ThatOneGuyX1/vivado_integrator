@@ -59,4 +59,13 @@ module digit_selector(
             seg <= sw[15:12];
          end
          end
+         
+         
+         initial begin
+         digit_sel = 0;
+         seg = 0;
+         cntr = 0;
+         end
+         
+         
 endmodule

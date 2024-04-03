@@ -26,19 +26,20 @@ module int_top_tb;
     reg btnC;
     reg btnD;
     wire [6:0] seg;
+    wire [3:0] an;
     wire dp;
     wire [15:0] led;
-    wire [7:0] x,y,z;
-    wire [3:0] a,b;
-    wire enable;
+//    wire [7:0] x,y,z;
+//    wire [3:0] a,b;
+//    wire enable;
     parameter period = 10;
     
-    int_top uut(.clk(clk),.sw(sw),.btnC(btnC),.btnD(btnD),.seg(seg),.dp(dp),.led(led));
+    int_top uut(.clk(clk),.sw(sw),.btnC(btnC),.btnD(btnD),.seg(seg),.an(an),.dp(dp),.led(led));
     
     //state_machine uut(.reset(btnD),.clk(clk),.ns(btnC),.x(x),.y(y),.z(z),.b(b),.a(a),.enable(enable),.led(led));
     
     always #(period/2) clk = ~clk;
-    always #(3*period) btnC = ~btnC;
+//    always #(3*period) btnC = ~btnC;
     
     initial
         begin
@@ -49,14 +50,22 @@ module int_top_tb;
         #(5*period) btnD = 0;
         #(period) btnD = 1;
         #(period) btnD = 0;
+        #(period) btnC = 0;
+        #(period) btnC = 1;
+        #(period) btnC = 0;
         # (5*period);
         sw[15:8] <= 1;
-        sw[7:0] <= 2;
-        //sw = 16'b0000000100000010;
-        # (period*5);
-            sw = 16'b0011_0000_0000_0010;
-        # (period*5);
-            sw = 16'b00000001_00000010;
+        sw[7:0] <= 1;
+        #(period) btnC = 0;
+        #(period) btnC = 1;
+        #(period) btnC = 0;
+        #(period) btnC = 0;
+        #(period) btnC = 1;
+        #(period) btnC = 0;
+        # (period);
+            sw = 16'b0010_0000_0000_0001;
+        #(period*30);
+        #(period);
         # (period*5);
         
         

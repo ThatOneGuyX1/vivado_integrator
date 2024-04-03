@@ -25,8 +25,8 @@ module integrator(
     input [7:0] x, //x^2 coefficent
     input [7:0] y, //y  x coefficent
     input [7:0] z, //constant
-    input [4:0] b, // Upper bound
-    input [4:0] a, // Lower bound,
+    input [3:0] b, // Upper bound
+    input [3:0] a, // Lower bound,
     output [15:0] result,
     output calc_done
     );
@@ -35,11 +35,9 @@ module integrator(
     parameter scalef = 8;
     parameter scalef2 = scalef+scalef;
     
-    wire [16:0]temp;
-   
     //Fixes point values
     reg[16:0] x2,x1,x0;
-    reg[16:0] upperbound, lowerbound;
+  
     
     
     //Pipeline Registers
@@ -50,7 +48,7 @@ module integrator(
     reg[23:0] current_pos; // In regards to the bounds where we are 
     //Wires
     wire clke = (clk & enable); // Are writing?
-    assign calc_done = (b == ((current_pos-4)>>8)) ? 1:0; // Checks to see if we are the end of the bounds
+    assign calc_done = (b == ((current_pos-6)>>8)) ? 1:0; // Checks to see if we are the end of the bounds
     assign result = !calc_done ? 16'hZZZZ: ((temp_x0+temp_x1 +temp_x2) >> 8);
     
     always @(posedge clke) begin
@@ -58,10 +56,8 @@ module integrator(
         if(calc_done | (0 == current_pos)) begin //at the end of calculation reset fixed point
             x2 <= x<< 8;
             x1 <= y<< 8;
-            
-            upperbound <= b << (4);
-            lowerbound <= a << (8);
-            current_pos <= 0;
+  
+            current_pos <= a << (8);
             temp_x0 <= (z* (b - a)) << (8);
             temp_x2 <= 0;
             temp_x1 <= 0;
@@ -73,15 +69,17 @@ module integrator(
         end
         if(!calc_done) begin
     //Find the values of f(x) for each part
-        x2_p1 <= (((current_pos *current_pos)) * x2)>>scalef;
+        x2_p1 <= (((current_pos *current_pos)) * x2) >> (scalef);
         x1_p1 <= ((current_pos) *x1);
     // Find the area for dX
         x2_p2 <= (x2_p1[63:8] * step);
         x1_p2 <= (x1_p1[63:8] * step);
     // Increment the postion by x
-        current_pos <= step + current_pos;
+        
         temp_x2 <= temp_x2 + x2_p2[63:8];
-        temp_x1 <= temp_x1 + x1_p2[63:8]    ;
+        temp_x1 <= temp_x1 + x1_p2[63:8];
+        
+        current_pos <= step + current_pos;
         end
     end
     
@@ -89,12 +87,14 @@ module integrator(
         x2 = 0;
         x1 = 0;
         x0 = 0;
-        upperbound = 0;
-        lowerbound = 0;
         current_pos = 0;
         temp_x0 = 0;
         temp_x2 = 0;
         temp_x1 = 0;
+        x2_p1 = 0;
+        x1_p1 = 0;
+        x2_p2 = 0;
+        x1_p2 = 0;
         
         
     end

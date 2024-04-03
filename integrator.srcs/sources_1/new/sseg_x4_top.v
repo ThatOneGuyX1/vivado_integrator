@@ -38,7 +38,8 @@ module sseg_x4_top(
     
     clk_gen clock1(.clk(clk),.rst(btnC),.clk_div(clkd));
     digit_selector selector1(.clk(clkd), .rst(btnC), .sw(sw), .digit_sel(an), .seg(hex_num));
-    segment_display display1(.sw(hex_num), .seg(seg), .an(an1), .dp(dp));
+    segment_display display1(.sw(hex_num), .seg(seg), .dp(dp));
+    
     
     
 endmodule
